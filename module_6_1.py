@@ -6,15 +6,12 @@ class Annimal:
         self.name = name
 
     def eat(self, food):
-        self.food = food
-        if food == Plant.edible:
-            print(self.name, "сьел", food.name)
+        if food.edible:
+            print(f"{self.name} съел {food.name}")
+            self.fed = True
         else:
-            fed = True
-        if food != Plant.edible:
-            print(self.name, "не стал есть", food.name)
-        else:
-            alive = False
+            print(f"{self.name} не стал есть {food.name}")
+            self.alive = False
 
 
 class Plant:
